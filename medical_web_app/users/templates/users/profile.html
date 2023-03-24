@@ -1,0 +1,66 @@
+{% extends 'users/base.html' %}
+{% block content %}
+	<center>
+	<h1>update profile</h1>
+	<br /><br />
+	{% if submitted %}
+			Your Profile Was Updated Successfully!!!
+
+	{% else %}
+
+
+		<form action="" method="POST" >
+			{% csrf_token %}
+
+			{{ form.as_p}}
+
+
+			<input type="submit" value="Submit" class="btn btn-secondary">
+		</form>	
+
+	{% endif %}
+	
+	</center>
+{% endblock %}
+
+
+
+
+
+<!-- 
+<DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Document</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<div class="parent">
+		<div class="form">
+		<h1>Profile Creation Form</h1>
+        <form action="" method="POST">
+			{% csrf_token %}
+        	<br>
+        	<label for="fname">Email:</label>
+        	<input type="email" placeholder="Enter your email" name="email">
+        	<br>
+        	<label for="fname">Enter Password</label>
+        	<input type="password" placeholder="Create your Password" name="password">
+        	<br>
+        	<label for="fname">Enter Password</label>
+        	<input type="password" placeholder="Create your Password" name="password">
+        	<br>
+        	<label for="fname">Enter Password</label>
+        	<input type="password" placeholder="Create your Password" name="password">
+        	<br>
+        	<button type="submit">Submit</button>
+        	
+        </form>
+	    </div>
+	</div>
+</body>
+</html>s -->

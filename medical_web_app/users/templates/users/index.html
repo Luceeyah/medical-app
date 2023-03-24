@@ -1,0 +1,30 @@
+{% extends tmp %}
+
+
+<!--Navbar content -->
+{% block navbar-content %}
+    <!-- <i style="color: yellowblue;" class="fas fa-user-alt"></i> -->
+{% if user.is_physician == True %}
+
+    <a href="{% url 'appointment-approval' %}">
+        <p style="color: yellowblue;">Appointments</p>
+    </a>
+        {% endif %}
+    
+{% endblock navbar-content %}
+
+<!--Page content -->
+{% block content %}
+
+{% if user.is_physician == True %}
+            You are a medical practioner
+    <i style="color: yellowblue;" class="fas fa-user-alt"></i>
+
+        {% else %}
+            You are a regular user
+        {% endif %}
+
+<div class="container">
+    
+</div>
+{% endblock content %}

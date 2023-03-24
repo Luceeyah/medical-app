@@ -1,0 +1,28 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	max-width: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+#footer,
+.push {
+	height: 50px;
+}
+
+
+.page-item.active .page-link {
+	columns: #fff;
+	background-color: #6c757d;
+	border: 1px solid #6c757d;
+}
+
+/*.dataTables_filter {
+	margin-bottom: 10px !important;
+	display: none;
+}*/

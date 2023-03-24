@@ -1,0 +1,8 @@
+*.pyc
+venv/
+
+.vscode/
+
+db.sqlite3
+
+_pycache__/manage.cpython-3*.pyc

@@ -1,0 +1,94 @@
+{% extends 'users/base.html' %}
+
+
+{% block content %}
+	<div class="card">
+	  	<div class="card-header">
+	    Doctor
+	  	</div>
+	  	<div class="card-body">
+	    <h4 class="card-title">{{ doctor.first_name }}</h4>
+		    <p class="card-text">
+			    <ul>
+					<li>{{ doctor.email }}</li>
+					<li>{{ doctor.last_name }}</li>
+					<li>{{ doctor.mobile }}</li>
+				</ul>
+				<br>
+		    </p>
+	  	</div>
+	</div>
+
+
+
+
+
+	<!-- Book An Appointment Area Start -->
+  <section class="book-an-appointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" ;>
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+            <h2>Book An Apointment</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Appointment Form -->
+          <div class="appointment-form">
+            <form action="{% url 'appointment' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" value={{user.first_name}}{{user.last_name}} name="your-name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" value={{user.mobile}} name="your-phone" class="form-control" placeholder="Your Phone" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="email" value={{user.email}} name="your-email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="email" value={{ doctor.email }} name="doc-email" class="form-control" placeholder="Doctor's Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <select required name="your-schedule" class="form-control">
+                      <option value="First Choice Appoinment Time">Appoinment Time</option>
+                      <option value="9 AM to 10 AM">9 AM to 10 AM</option>
+                      <option value="11 AM to 12 PM">11 AM to 12 PM</option>
+                      <option value="2 PM to 4 PM">2 PM to 4 PM</option>
+                      <option value="8 PM to 10 PM">8 PM to 10 PM</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="col-12">
+                  <div class="form-group mb-30">
+                    <textarea name="your-message" class="form-control" placeholder="Your Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn dento-btn">Booking Now</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Book An Appointment Area End -->
+{% endblock %}
